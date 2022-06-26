@@ -73,4 +73,12 @@ var fight = function() {
     }
 }
 
-fight();
+//fight();
+
+//GAME STATES
+//"WIN" - player robot defeats all enemy robot
+//  * fight all enemy robots
+//  * defeat all enemy robots
+//"LOSE" - player's robot hits 0 or less
+//  * fight enemy robots 
+//  * health reduced to 0 or less 
