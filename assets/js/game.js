@@ -7,9 +7,10 @@ var playerName = window.prompt("What is your robot's name?");
 //setup initial attributes
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 10;
 
 //starting status
-console.log(playerName, playerHealth, playerAttack);
+console.log(playerName, playerHealth, playerAttack, playerMoney);
 
 //enemy Setup
 var enemyName = "Roborto";
@@ -21,7 +22,7 @@ console.log(enemyName, enemyHealth, enemyAttack);
 
 var fight = function() {
     //ask to fight
-    var promptFight = window.prompt("Do you want to fight, or skip? Enter 'FIGHT' or 'SKIP'.");
+    var promptFight = window.prompt("Do you want to fight, or skip for 2 BattleBucks? Enter 'FIGHT' or 'SKIP'.");
 
     //fight conditions
     if (promptFight === "FIGHT" || promptFight === "fight") {
@@ -55,15 +56,20 @@ var fight = function() {
         else {
             window.alert("You are still alive! You have " + playerHealth + " health left.");
         }
-    }
+    } else if (promptFight === "skip" || promptFight === "SKIP") {
+        //confirm selection
+        var confirmSkip = window.confirm("Are you sure?");
 
-    //skip conditions
-    else if (promptFight === "skip" || promptFight === "SKIP") {
-        window.alert(playerName + " has chosen to skip the fight.");
-    }
-
-    else {
-        window.alert("Please choose a valid option. Enter 'FIGHT' or 'SKIP'");
+        //if skip
+        if (confirmSkip) {
+            playerMoney = playerMoney - 2;
+            window.alert("You have chosen to skip the fight. You now have " + playerMoney + " BattleBucks left.");
+        } else {
+            fight()
+        }        
+    } else {
+        window.alert("Please choose a valid option. Enter 'FIGHT' or 'SKIP'")
+        fight();
     }
 }
 
