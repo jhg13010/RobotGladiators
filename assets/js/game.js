@@ -3,30 +3,18 @@ window.alert("Welcome to Robot Gladiators!");
 
 //fetch user robot's name
 var playerName = window.prompt("What is your robot's name?");
-
 //setup initial attributes
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
-
-//starting status
-console.log(playerName, playerHealth, playerAttack, playerMoney);
 
 //enemy Setup
 var enemyNames = ["Roborto", "Amy Android", "Robo Tumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-//enemy starting status
-console.log(enemyNames, enemyHealth, enemyAttack);
-console.log(enemyNames.length);
-for (var i=0; i < enemyNames.length; i++) {
-    console.log(enemyNames[i]);
-    console.log(i);
-    console.log(enemyNames[i] + " is at " + i + " index");
-}
-
-var fight = function() {
+//fight function setup
+var fight = function(enemyName) {
     //ask to fight
     var promptFight = window.prompt("Do you want to fight, or skip for 2 BattleBucks? Enter 'FIGHT' or 'SKIP'.");
 
@@ -79,7 +67,9 @@ var fight = function() {
     }
 }
 
-//fight();
+for(var i=0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
 
 //GAME STATES
 //"WIN" - player robot defeats all enemy robot
