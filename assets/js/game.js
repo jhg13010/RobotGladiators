@@ -15,6 +15,8 @@ var enemyAttack = 12;
 
 //fight function setup
 var fight = function(enemyName) {
+    //alert start 
+    window.alert("Welcome to Round " + (i+1) + " of Robot Gladiators. 3...2...1...FIGHT");
     //while enemyHealth > 0 
     while(enemyHealth > 0 && playerHealth > 0) {
         //fight conditions
@@ -66,8 +68,6 @@ for(var i=0; i < enemyNames.length; i++) {
 
     //indicate fight start 
     if (promptFight === "FIGHT" || promptFight === "fight") {
-        //alert players of start
-        window.alert("3...2...1...FIGHT!");
         fight(pickedEnemyName);
     } else if (promptFight === "skip" || promptFight === "SKIP") {
         //confirm selection
