@@ -13,12 +13,13 @@ var playerMoney = 10;
 console.log(playerName, playerHealth, playerAttack, playerMoney);
 
 //enemy Setup
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Tumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 //enemy starting status
-console.log(enemyName, enemyHealth, enemyAttack);
+console.log(enemyNames, enemyHealth, enemyAttack);
+console.log(enemyNames[2]);
 
 var fight = function() {
     //ask to fight
