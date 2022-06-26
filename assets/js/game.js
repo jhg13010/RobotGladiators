@@ -19,7 +19,12 @@ var enemyAttack = 12;
 
 //enemy starting status
 console.log(enemyNames, enemyHealth, enemyAttack);
-console.log(enemyNames[2]);
+console.log(enemyNames.length);
+for (var i=0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+}
 
 var fight = function() {
     //ask to fight
