@@ -116,24 +116,12 @@ var shop = function() {
     switch (shopOptionPrompt) {
         case "REFILL":
         case "refill":
-           if (playerInfo.money >= 7) {
-                window.alert("Refilling " + playerInfo.name + "'s health by 20 for 7 BattleBucks.");
-                playerInfo.health = playerInfo.health + 20;
-                playerInfo.money = playerInfo.money - 7;
-           } else {
-            window.alert("I'm sorry, you do not have enought money.");
-           };
+            playerInfo.refillHealth();
            break;
         
         case "UPGRADE":
         case "upgrade":
-            if (playerInfo.money >= 7) {
-                window.alert("Updrading " + playerInfo.name + "'s attack capabilities by 6 for 7 BattleBucks.");
-                playerInfo.attack = playerInfo.attack + 6;
-                playerInfo.money = playerInfo.money - 7;
-            } else {
-                window.alert("I'm sorry, you do not have enought money.");
-            };
+            playerInfo.upgradeAttack();
             break;
 
         case "LEAVE":
@@ -162,10 +150,28 @@ var playerInfo = {
     health: 100,
     attack: 10,
     money: 10,
-    reset: function () {
+    reset: function() {
         this.health = 100;
         this.attack = 10;
         this.money = 10;
+    }, 
+    refillHealth: function() {
+        if (this.money >= 7) {
+            window.alert("Refilling " + playerInfo.name + "'s health by 20 for 7 BattleBucks.");
+            this.health += 20;
+            this.money -= 7;
+        } else {
+            window.alert("I'm sorry, you do not have enought money.");
+        };
+    },
+    upgradeAttack: function() {
+        if (this.money >= 7) {
+            window.alert("Updrading " + playerInfo.name + "'s attack capabilities by 6 for 7 BattleBucks.");
+            this.attack += 6;
+            this.money -= 7;
+        } else {
+            window.alert("I'm sorry, you do not have enought money.");
+        };
     }
 };
 
